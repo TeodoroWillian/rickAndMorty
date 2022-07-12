@@ -1,15 +1,10 @@
 const route = require("express").Router();
 const controllerCharacters = require("../controllers/rickAndMorty.controller");
-const swaggerUi = require("swagger-ui-express");
-const swaggerDocument = require("../../swagger.json");
-
 const {
   validId,
   validObjectBody,
 } = require("../middlewares/rickAndMorty.middleware");
 
-route.use("/api-docs", swaggerUi.serve);
-route.get("/api-docs", swaggerUi.setup(swaggerDocument));
 
 route.get("/all-characters", controllerCharacters.findAllCharactersController);
 route.get(

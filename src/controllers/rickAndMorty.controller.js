@@ -1,4 +1,4 @@
-const characterService = require("../services/");
+const characterService = require("../services/rickAndMorty.service");
 const mongoose = require("mongoose");
 
 const findAllCharactersController = async (req, res) => {
