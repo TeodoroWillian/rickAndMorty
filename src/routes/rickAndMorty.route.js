@@ -5,7 +5,6 @@ const {
   validObjectBody,
 } = require("../middlewares/rickAndMorty.middleware");
 
-
 route.get("/all-characters", controllerCharacters.findAllCharactersController);
 route.get(
   "/one-character/:id",
@@ -28,4 +27,5 @@ route.delete(
   validId,
   controllerCharacters.deleteCharacterController
 );
+
 module.exports = route;

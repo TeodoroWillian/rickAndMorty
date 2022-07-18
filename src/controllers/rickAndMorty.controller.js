@@ -4,7 +4,9 @@ const mongoose = require("mongoose");
 const findAllCharactersController = async (req, res) => {
   const allCharacters = await characterService.findAllCharactersService();
   if (allCharacters.length == 0) {
-    return res.status(404).send({ message: "Não existe Personagem cadastrado" });
+    return res
+      .status(404)
+      .send({ message: "Não existe Personagem cadastrado" });
   }
   res.send(allCharacters);
 };
@@ -12,7 +14,9 @@ const findAllCharactersController = async (req, res) => {
 const findByIdCharacterController = async (req, res) => {
   const idParam = req.params.id;
 
-  const chosenCharacter = await characterService.findByIDCharacterService(idParam);
+  const chosenCharacter = await characterService.findByIDCharacterService(
+    idParam
+  );
   if (!chosenCharacter) {
     return res.status(404).send({ message: "Personagem Não Encontrada" });
   }

@@ -21,10 +21,10 @@ const CharacterSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
-  image:{
+  image: {
     type: String,
     require: true,
-  }
+  },
 });
 
 const Character = mongoose.model("characters", CharacterSchema);
